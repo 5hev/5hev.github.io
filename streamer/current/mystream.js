@@ -1,6 +1,6 @@
 var quote = {};
 
-var aEx = { "Poloniex", "Kraken" };
+var aEx = [ "Poloniex", "Kraken" ];
 
 var createDom = function(pair) {
 	var wrapper = document.getElementById("content");
