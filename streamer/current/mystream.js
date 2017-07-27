@@ -7,7 +7,7 @@ var createDom = function(pair) {
 	var div = document.createElement("div");
 	var html = '<div class="wrapper">';
 	html += '<span id="fsym_'+ pair +'"></span> - <span id="tsym_'+ pair +'"></span>';
-	aEx.forEach(function(item,i,arr){
+	aEx.forEach(function(item,i,aEx){
 		html += '<div class="price" id="price_'+ pair +'_'+ item +'"></div>';
 	});
 	html += '</div>';
@@ -49,7 +49,7 @@ var displayQuote = function(_quote) {
 	document.getElementById("change_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.CHANGE24H);
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 */
-	aEx.forEach (function(item,i,arr){
+	aEx.forEach (function(item,i,aEx){
 		if (quote.FLAGS === "4") {
 			document.getElementById("price_" + pair + "_" + item).className = "";
 			console.log("> " + item + "> Flag = 4. No work");
