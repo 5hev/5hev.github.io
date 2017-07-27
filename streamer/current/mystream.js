@@ -57,7 +57,7 @@ var displayQuote = function(_quote) {
 	aEx.forEach (function(item,i,aEx){
 		
 		if (_quote.LASTMARKET == item) {
-			//console.log(_quote);
+			console.log(_quote);
 			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 			document.getElementById(pair + "_" + item + "_price").innerHTML = _quote.PRICE + ' (' + _quote.LASTMARKET + ')';
 			document.getElementById(pair + "_" + item + "_vol").innerHTML = _quote.VOLUME24HOUR.toFixed(2);
@@ -95,7 +95,7 @@ var socket = io.connect('https://streamer.cryptocompare.com/');
 //Format: {SubscriptionId}~{ExchangeName}~{FromSymbol}~{ToSymbol}
 //Use SubscriptionId 0 for TRADE, 2 for CURRENT and 5 for CURRENTAGG
 //For aggregate quote updates use CCCAGG as market
-var subscription = ['5~CCCAGG~LTC~BTC', '5~CCCAGG~ETH~BTC', '5~CCCAGG~BITOK~BTC'];
+var subscription = ['5~CCCAGG~ETH~BTC'];
 
 socket.emit('SubAdd', {subs:subscription} );
 
