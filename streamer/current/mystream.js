@@ -27,7 +27,7 @@ var createDom = function(pair) {
 };
 
 var displayQuote = function(_quote) {
-	console.log("> .");
+	console.log(_quote);
 
 	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
