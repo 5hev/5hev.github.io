@@ -1,31 +1,13 @@
 .wrapper {
-	width: 320px;
-	height: 250px;
-	margin: 50px;
-	background-color: #132c40;
-	color: white;
-	padding: 15px 50px 10px 50px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 96vw;
+	background-color: #ccc;
+	font-family: Arial, Verdana;
 	border-radius: 5px;
-	font-size: 15px;
-}
-
-h1 {
-	font-size: 24px;
-	color: #85c1cc;
-	padding: 0;
+	font-size: 2.5vw;
 }
 
 .label {
 	color: #a5bdc1;
-}
-
-.price {
-	font-size: 25px;
-}
-
-.value {
-	color: white;
 }
 
 .up {
