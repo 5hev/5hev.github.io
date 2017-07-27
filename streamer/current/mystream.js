@@ -95,7 +95,7 @@ console.log(socket);
 //Format: {SubscriptionId}~{ExchangeName}~{FromSymbol}~{ToSymbol}
 //Use SubscriptionId 0 for TRADE, 2 for CURRENT and 5 for CURRENTAGG
 //For aggregate quote updates use CCCAGG as market
-var subscription = ['2~Poloniex~BTC~USD', '2~Poloniex~ETH~USD'];
+var subscription = ['2~Poloniex~LTC~BTC','2~Yobit~LTC~BTC', '2~Yobit~BITOK~BTC'];
 
 socket.emit('SubAdd', {subs:subscription} );
 
