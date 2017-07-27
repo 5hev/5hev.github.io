@@ -27,7 +27,7 @@ var createDom = function(pair) {
 };
 
 var displayQuote = function(_quote) {
-	console.log("> displayQuote.");
+	console.log("> .");
 
 	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
@@ -57,9 +57,9 @@ var displayQuote = function(_quote) {
 				document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
 				console.log("> " + item + "> Flag = "+ _quote.FLAGS +". Last market obtained: " + _quote.LASTMARKET);
 		}
-		if (quote.FLAGS === "1"){
+		if (_quote.FLAGS === "1"){
 			document.getElementById("price_" + pair + "_" + item).className = "up";
-		} else if (quote.FLAGS === "2") {
+		} else if (_quote.FLAGS === "2") {
 			document.getElementById("price_" + pair + "_" + item).className = "down";
 		}
 	});
