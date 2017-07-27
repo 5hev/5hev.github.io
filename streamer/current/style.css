@@ -12,6 +12,12 @@ div  {
 	display: inline-block;
 }
 
+div[id$="change"]  {
+	display: block;
+	width: 50%;
+	background-color: #ddd;
+}
+
 .up {
 	color: #1cf6ba;
 }
