@@ -32,7 +32,7 @@ var displayQuote = function(_quote) {
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
 	var pair = _quote.FROMSYMBOL + _quote.TOSYMBOL;
 	console.log(_quote);
-	console.log(pair);
+	//console.log(pair);
 	
 	document.getElementById("fsym_" + pair).innerHTML = _quote.FROMSYMBOL;
 	document.getElementById("tsym_" + pair).innerHTML = _quote.TOSYMBOL;
@@ -94,7 +94,7 @@ socket.on("m", function(message){
 	var res = {};
 	if (messageType === CCC.STATIC.TYPE.CURRENTAGG) {
 		res = CCC.CURRENT.unpack(message);
-		console.log(res);
+		//console.log(res);
 		updateQuote(res);
 	}						
 });
