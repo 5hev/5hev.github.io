@@ -6,10 +6,16 @@ var createDom = function(pair) {
 	var wrapper = document.getElementById("content");
 	var div = document.createElement("div");
 	var html = '<div class="wrapper">';
-	html += '<span id="fsym_'+ pair +'"></span> - <span id="tsym_'+ pair +'"></span>';
+	html += '<div class="name"><span id="fsym_'+ pair +'"></span>-<span id="tsym_'+ pair +'"></span></div>';
+	
 	aEx.forEach(function(item,i,aEx){
-		html += '</br><span>' + item +': </span><div class="price" id="price_'+ pair +'_'+ item +'"></div>';
+		html += '<div id="'+ pair + '_' + item +'_data">';
+			html += '<div id="'+ pair + '_' + item +'_change"></div>';
+			html += '<div id="'+ pair + '_' + item +'_price"></div>';
+			html += '<div id="'+ pair + '_' + item +'_vol"></div>';
+		html += '</div>';
 	});
+	
 	html += '</div>';
 /*	
 	html += '<div class="label">24h Change: <span class="value" id="change_'+ pair +'"></span> (<span class="value" id="changepct_'+ pair +'"></span>)</div>';
@@ -52,16 +58,17 @@ var displayQuote = function(_quote) {
 	aEx.forEach (function(item,i,aEx){
 		
 		if (_quote.LASTMARKET === item) {
-			document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
-			console.log("> " + item + "> Flag = "+ _quote.FLAGS +". Last market obtained: " + _quote.LASTMARKET);
-		}
-		
+			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
+			document.getElementById(pair + "_" + item + "_price").innerHTML = _quote.PRICE;
+			document.getElementById(pair + "_" + item + "_vol").innerHTML = _quote.VOLUME24HOUR;
+
 		if (_quote.FLAGS === "1"){
-			document.getElementById("price_" + pair + "_" + item).className = "up";
+			document.getElementById(pair + "_" + item + "_change").className = "up";
 		} else if (_quote.FLAGS === "2") {
-			document.getElementById("price_" + pair + "_" + item).className = "down";
+			document.getElementById(pair + "_" + item + "_change").className = "down";
 		} else if (_quote.FLAGS === "4") {
-			document.getElementById("price_" + pair + "_" + item).className = "";
+			document.getElementById(pair + "_" + item + "_change").className = "";
+		}
 		}
 	});
 	
