@@ -54,7 +54,7 @@ var displayQuote = function(_quote) {
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 */
 	aEx.forEach (function(item,i,aEx){
-		console.log("> item <-> " , _quote.LASTMARKET);
+		console.log("> "+ item +" <-> " , _quote.LASTMARKET);
 		if (_quote.LASTMARKET == item) {
 			console.log(_quote);
 			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
