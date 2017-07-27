@@ -33,7 +33,6 @@ var createDom = function(pair) {
 };
 
 var displayQuote = function(_quote) {
-	console.log(_quote);
 
 	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
@@ -58,6 +57,7 @@ var displayQuote = function(_quote) {
 	aEx.forEach (function(item,i,aEx){
 		
 		if (_quote.LASTMARKET === item) {
+			console.log(_quote);
 			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 			document.getElementById(pair + "_" + item + "_price").innerHTML = _quote.PRICE;
 			document.getElementById(pair + "_" + item + "_vol").innerHTML = _quote.VOLUME24HOUR;
