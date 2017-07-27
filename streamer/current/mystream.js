@@ -8,7 +8,7 @@ var createDom = function(pair) {
 	var html = '<div class="wrapper">';
 	html += '<span id="fsym_'+ pair +'"></span> - <span id="tsym_'+ pair +'"></span>';
 	aEx.forEach(function(item,i,aEx){
-		html += '<div class="price" id="price_'+ pair +'_'+ item +'"></div>';
+		html += '<span>' + item +': </span></br><div class="price" id="price_'+ pair +'_'+ item +'"></div>';
 	});
 	html += '</div>';
 /*	
