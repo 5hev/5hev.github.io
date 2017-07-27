@@ -31,7 +31,7 @@ var displayQuote = function(_quote) {
 	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
 	var pair = _quote.FROMSYMBOL + _quote.TOSYMBOL;
-	console.log(_quote);
+	//console.log(_quote);
 	//console.log(pair);
 	
 	document.getElementById("fsym_" + pair).innerHTML = _quote.FROMSYMBOL;
@@ -51,8 +51,10 @@ var displayQuote = function(_quote) {
 	aEx.forEach (function(item,i,arr){
 		if (quote.FLAGS === "4") {
 			document.getElementById("price_" + pair + "_" + item).className = "";
+			console.log("> " + item + "> Flag = 4. No work");
 		} else if (quote.LASTMARKET === item) {
 				document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
+				console.log("> " + item + "> Flag = "+ quote.FLAGS +". Last market obtained: " + quote.LASTMARKET);
 			}
 
 		if (quote.FLAGS === "1"){
