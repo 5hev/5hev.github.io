@@ -1,5 +1,5 @@
 var quote = {};
-
+/*
 var aEx = [ "Yobit" ];
 
 var createDom = function(pair) {
@@ -27,7 +27,7 @@ var createDom = function(pair) {
 	html += '<div class="label">24h VolumeTo: <span class="value" id="24volumeto_'+ pair +'"></span></div>';
 	html += '<div class="source"> Source: <a href="http://www.cryptocompare.com">CryptoCompare</a></div>';
 	html += '</div>';
-*/	
+	
 	div.innerHTML = html;
 	wrapper.appendChild(div);
 };
@@ -52,7 +52,7 @@ var displayQuote = function(_quote) {
 	document.getElementById("tradeid_" + pair).innerHTML = _quote.LASTTRADEID.toFixed(0);
 	document.getElementById("change_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.CHANGE24H);
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
-*/
+
 	//aEx.forEach (function(item,i,aEx){
 		//console.log("> "+ item +" <-> " , _quote.LASTMARKET);
 		//if (_quote.LASTMARKET == item) {
@@ -72,21 +72,22 @@ var displayQuote = function(_quote) {
 	//});
 	
 }
-
+*/
 var updateQuote = function(result) {
 
 	var keys = Object.keys(result);
 	var pair = result.FROMSYMBOL + result.TOSYMBOL;
 	if (!quote.hasOwnProperty(pair)) {
 		quote[pair] = {}
-		createDom(pair);
+		//createDom(pair);
 	}
 	for (var i = 0; i <keys.length; ++i) {
 		quote[pair][keys[i]] = result[keys[i]];
 	}
 	quote[pair]["CHANGE24H"] = quote[pair]["PRICE"] - quote[pair]["OPEN24HOUR"];
 	quote[pair]["CHANGEPCT24H"] = quote[pair]["CHANGE24H"]/quote[pair]["OPEN24HOUR"] * 100;
-	displayQuote(quote[pair]);
+	console.log("> ", quote[pair]);
+	//displayQuote(quote[pair]);
 }
 
 var socket = io.connect('https://streamer.cryptocompare.com/');
