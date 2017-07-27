@@ -10,7 +10,7 @@
 	color: #a5bdc1;
 }
 
-div[class^="price"] {
+div[id^="price"] {
 	display:inline-block;	
 }
 
