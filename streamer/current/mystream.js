@@ -103,7 +103,7 @@ socket.on("m", function(message){
 	var res = {};
 	if (messageType === CCC.STATIC.TYPE.CURRENTAGG) {
 		res = CCC.CURRENT.unpack(message);
-		//console.log(res);
+		console.log(res);
 		updateQuote(res);
 	}						
 });
