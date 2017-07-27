@@ -50,17 +50,20 @@ var displayQuote = function(_quote) {
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 */
 	aEx.forEach (function(item,i,aEx){
+		document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
+		/*
 		if (_quote.FLAGS === "4") {
-			document.getElementById("price_" + pair + "_" + item).className = "";
-			console.log("> " + item + "> Flag = 4. No work");
+			//console.log("> " + item + "> Flag = 4. No work");
 		} else if (_quote.LASTMARKET === item) {
-				document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
-				console.log("> " + item + "> Flag = "+ _quote.FLAGS +". Last market obtained: " + _quote.LASTMARKET);
+			console.log("> " + item + "> Flag = "+ _quote.FLAGS +". Last market obtained: " + _quote.LASTMARKET);
 		}
+		*/
 		if (_quote.FLAGS === "1"){
 			document.getElementById("price_" + pair + "_" + item).className = "up";
 		} else if (_quote.FLAGS === "2") {
 			document.getElementById("price_" + pair + "_" + item).className = "down";
+		} else if (_quote.FLAGS === "4") {
+			document.getElementById("price_" + pair + "_" + item).className = "";
 		}
 	});
 	
