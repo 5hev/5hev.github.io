@@ -33,10 +33,11 @@ var displayQuote = function(_quote) {
 	var pair = _quote.FROMSYMBOL + _quote.TOSYMBOL;
 	console.log(_quote);
 	console.log(pair);
-/*	
-	document.getElementById("market_" + pair).innerHTML = _quote.LASTMARKET;
+	
 	document.getElementById("fsym_" + pair).innerHTML = _quote.FROMSYMBOL;
 	document.getElementById("tsym_" + pair).innerHTML = _quote.TOSYMBOL;
+/*	
+	document.getElementById("market_" + pair).innerHTML = _quote.LASTMARKET;
 	document.getElementById("price_" + pair).innerHTML = _quote.PRICE;
 	document.getElementById("volume_" + pair).innerHTML = CCC.convertValueToDisplay(fsym, _quote.LASTVOLUME);
 	document.getElementById("volumeto_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.LASTVOLUMETO);
@@ -57,7 +58,7 @@ var displayQuote = function(_quote) {
 		document.getElementById("price").className = "";
 	}
 	aEx.forEach (function(item,i,arr){
-		if (quote.LASTMARKET == item) {
+		if ((quote.FLAGS != "4") && (quote.LASTMARKET == item)) {
 	   		document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
     		}
 	})
