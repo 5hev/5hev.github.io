@@ -37,7 +37,6 @@ var displayQuote = function(_quote) {
 	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
 	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
 	var pair = _quote.FROMSYMBOL + _quote.TOSYMBOL;
-	//console.log(_quote);
 	//console.log(pair);
 	
 	document.getElementById("fsym_" + pair).innerHTML = _quote.FROMSYMBOL;
@@ -55,7 +54,7 @@ var displayQuote = function(_quote) {
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 */
 	aEx.forEach (function(item,i,aEx){
-		
+		console.log("> item <-> " , _quote.LASTMARKET);
 		if (_quote.LASTMARKET == item) {
 			console.log(_quote);
 			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
