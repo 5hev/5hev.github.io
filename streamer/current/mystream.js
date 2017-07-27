@@ -57,16 +57,16 @@ var displayQuote = function(_quote) {
 		//console.log("> "+ item +" <-> " , _quote.LASTMARKET);
 		//if (_quote.LASTMARKET == item) {
 			console.log(_quote);
-			document.getElementById(pair + "_" + 'Yobit_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
-			document.getElementById(pair + "_" + 'Yobit_price").innerHTML = _quote.PRICE;
-			document.getElementById(pair + "_" + 'Yobit_vol").innerHTML = _quote.VOLUME24HOURTO.toFixed(2);
+			document.getElementById(pair + "_" + "Yobit_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
+			document.getElementById(pair + "_" + "Yobit_price").innerHTML = _quote.PRICE;
+			document.getElementById(pair + "_" + "Yobit_vol").innerHTML = _quote.VOLUME24HOURTO.toFixed(2);
 
 		if (_quote.FLAGS === "1"){
-			document.getElementById(pair + "_" + 'Yobit_change").className = "up";
+			document.getElementById(pair + "_" + "Yobit_change").className = "up";
 		} else if (_quote.FLAGS === "2") {
-			document.getElementById(pair + "_" + 'Yobit_change").className = "down";
+			document.getElementById(pair + "_" + "Yobit_change").className = "down";
 		} else if (_quote.FLAGS === "4") {
-			document.getElementById(pair + "_" + 'Yobit_change").className = "";
+			document.getElementById(pair + "_" + "Yobit_change").className = "";
 		}
 		//}
 	//});
