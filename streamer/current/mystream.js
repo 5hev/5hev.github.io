@@ -8,13 +8,13 @@ var createDom = function(pair) {
 	var html = '<div class="wrapper">';
 	html += '<div class="name"><span id="fsym_'+ pair +'"></span>-<span id="tsym_'+ pair +'"></span></div>';
 	
-	aEx.forEach(function(item,i,aEx){
-		html += '<div id="'+ pair + '_' + item +'_data">';
-			html += '<div id="'+ pair + '_' + item +'_change"></div>';
-			html += '<div id="'+ pair + '_' + item +'_price"></div>';
-			html += '<div id="'+ pair + '_' + item +'_vol"></div>';
+	//aEx.forEach(function(item,i,aEx){
+		html += '<div id="'+ pair + '_' + 'Yobit_data">';
+			html += '<div id="'+ pair + '_' + 'Yobit_change"></div>';
+			html += '<div id="'+ pair + '_' + 'Yobit_price"></div>';
+			html += '<div id="'+ pair + '_' + 'Yobit_vol"></div>';
 		html += '</div>';
-	});
+	//});
 	
 	html += '</div>';
 /*	
@@ -53,23 +53,23 @@ var displayQuote = function(_quote) {
 	document.getElementById("change_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.CHANGE24H);
 	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
 */
-	aEx.forEach (function(item,i,aEx){
+	//aEx.forEach (function(item,i,aEx){
 		//console.log("> "+ item +" <-> " , _quote.LASTMARKET);
 		//if (_quote.LASTMARKET == item) {
 			console.log(_quote);
-			document.getElementById(pair + "_" + item + "_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
-			document.getElementById(pair + "_" + item + "_price").innerHTML = _quote.PRICE;
-			document.getElementById(pair + "_" + item + "_vol").innerHTML = _quote.VOLUME24HOURTO.toFixed(2);
+			document.getElementById(pair + "_" + 'Yobit_change").innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
+			document.getElementById(pair + "_" + 'Yobit_price").innerHTML = _quote.PRICE;
+			document.getElementById(pair + "_" + 'Yobit_vol").innerHTML = _quote.VOLUME24HOURTO.toFixed(2);
 
 		if (_quote.FLAGS === "1"){
-			document.getElementById(pair + "_" + item + "_change").className = "up";
+			document.getElementById(pair + "_" + 'Yobit_change").className = "up";
 		} else if (_quote.FLAGS === "2") {
-			document.getElementById(pair + "_" + item + "_change").className = "down";
+			document.getElementById(pair + "_" + 'Yobit_change").className = "down";
 		} else if (_quote.FLAGS === "4") {
-			document.getElementById(pair + "_" + item + "_change").className = "";
+			document.getElementById(pair + "_" + 'Yobit_change").className = "";
 		}
 		//}
-	});
+	//});
 	
 }
 
