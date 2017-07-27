@@ -56,14 +56,13 @@ var displayQuote = function(_quote) {
 		} else if (quote.LASTMARKET === item) {
 				document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
 				console.log("> " + item + "> Flag = "+ quote.FLAGS +". Last market obtained: " + quote.LASTMARKET);
-			}
-
+		}
 		if (quote.FLAGS === "1"){
 			document.getElementById("price_" + pair + "_" + item).className = "up";
 		} else if (quote.FLAGS === "2") {
 			document.getElementById("price_" + pair + "_" + item).className = "down";
 		}
-	})
+	});
 	
 }
 
