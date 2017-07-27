@@ -68,7 +68,7 @@ var displayQuote = function(_quote) {
 		} else if (_quote.FLAGS === "4") {
 			document.getElementById(pair + "_" + item + "_change").className = "";
 		}
-		}
+		//}
 	});
 	
 }
