@@ -10,6 +10,10 @@
 	color: #a5bdc1;
 }
 
+div[class^="price"] {
+	display:inline-block;	
+}
+
 .up {
 	color: #1cf6ba;
 }
