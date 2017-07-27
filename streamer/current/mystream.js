@@ -7,7 +7,7 @@ var createDom = function(pair) {
 	var div = document.createElement("div");
 	var html = '<div class="wrapper">';
 	html += '<span id="fsym_'+ pair +'"></span> - <span id="tsym_'+ pair +'"></span>';
-	aEx.foreach(function(item,i,arr){
+	aEx.forEach(function(item,i,arr){
 		html += '<div class="price" id="price_'+ pair +'_'+ item +'"></div>';
 	});
 	html += '</div>';
@@ -56,7 +56,7 @@ var displayQuote = function(_quote) {
 	else if (quote.FLAGS === "4") {
 		document.getElementById("price").className = "";
 	}
-	aEx.foreach (function(item,i,arr){
+	aEx.forEach (function(item,i,arr){
 		if (quote.LASTMARKET == item) {
 	   		document.getElementById("price_" + pair + "_" + item).innerHTML = _quote.PRICE;
     		}
